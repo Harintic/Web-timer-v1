@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+
+
+        <style>
+            .container {
+                display: block;
+                width: 30%;
+                margin: 50px auto;
+                text-align: center;
+                border: 1px solid #ccc; /* Optional: to visualize the container boundary */
+                padding: 20px; /* Optional: for better spacing inside the container */
+                box-sizing: border-box;
+                min-width: 350px;
+            }
+
+            .text-boxes {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+            }
+
+            .text-boxes input {
+                flex: 1 1 30%; /* Adjusts width based on container */
+                min-width: 80px; /* Ensures a minimum width */
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+    
+        </style>
+    </head>
+
+
+
+
+    <body>
+        <div class="container">
+            <div class="text-boxes">
+                    <input type="number" placeholder="HH">
+                    <input type="number" placeholder="MM">
+                    <input type="number" placeholder="SS">
+            </div>
+            <button>SET</button>
+        </div>
+    </body>
+
+
+
+</html>

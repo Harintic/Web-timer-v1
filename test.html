@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer App Settings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .settings-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .settings-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            /* border:1px solid black; */
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="settings-container">
+        <h2>Timer Settings</h2>
+        <form>
+            <div class="form-group">
+                <label for="work-duration">Work Duration (minutes):</label>
+                <input type="number" id="work-duration" name="work-duration" min="1" max="120" value="25">
+            </div>
+            <div class="form-group">
+                <label for="short-break-duration">Short Break Duration (minutes):</label>
+                <input type="number" id="short-break-duration" name="short-break-duration" min="1" max="30" value="5">
+            </div>
+            <div class="form-group">
+                <label for="long-break-duration">Long Break Duration (minutes):</label>
+                <input type="number" id="long-break-duration" name="long-break-duration" min="1" max="60" value="15">
+            </div>
+            <div class="form-group">
+                <label for="theme">Theme:</label>
+                <select id="theme" name="theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="alarm-sound">Alarm Sound:</label>
+                <select id="alarm-sound" name="alarm-sound">
+                    <option value="beep">Beep</option>
+                    <option value="chime">Chime</option>
+                    <option value="alarm">Alarm</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Save Settings</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

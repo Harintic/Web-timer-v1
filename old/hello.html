@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Boxes and Button</title>
+    <style>
+        .container {
+            display: block;
+            width: 50%;
+            margin: 50px auto;
+            text-align: center;
+            border: 1px solid #ccc; /* Optional: to visualize the container boundary */
+            padding: 20px; /* Optional: for better spacing inside the container */
+            box-sizing: border-box;
+        }
+
+        .text-boxes {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .text-boxes input[type="number"] {
+            flex: 1 1 30%; /* Adjusts width based on container */
+            min-width: 80px; /* Ensures a minimum width */
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .text-boxes input[type="number"]:invalid {
+            border-color: red;
+        }
+
+        .exclamation {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: red;
+            font-size: 20px;
+            display: none;
+            cursor: pointer;
+        }
+
+        .input-container input:invalid + .exclamation {
+            display: inline;
+        }
+
+        .tooltip {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Position the tooltip above the exclamation mark */
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .input-container:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-boxes">
+            <div class="input-container">
+                <input id = "hour-input" type="number" placeholder="Number 1" min="1" max="60" oninput="validateInput(this)">
+                <span class="exclamation">!</span>
+ 
+            </div>
+            <div class="input-container">
+                <input id = "minute-input" type="number" placeholder="Number 2" min="1" max="60" oninput="validateInput(this)">
+                <span class="exclamation">!</span>
+           
+            </div>
+            <div class="input-container">
+                <input id = "seconds-input" type="number" placeholder="Number 3" min="1" max="60" oninput="validateInput(this)">
+                <span class="exclamation">!</span>
+               
+            </div>
+        </div>
+        <div class="button-container">
+            <button onclick="handleClick()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        function validateInput(input) {
+            const exclamation = input.nextElementSibling;
+            const tooltip = exclamation.nextElementSibling;
+
+            var x = document.getElementById("hour-input").value
+
+            if (input.value < 1 || input.value > 60) {
+             
+                document.getElementById("hour-input").value = 60;
+                
+            } 
+            else {
+                input.setCustomValidity('');
+                exclamation.style.display = 'none';
+            }
+        }
+
+        function handleClick() {
+            const inputs = document.querySelectorAll('.text-boxes input[type="number"]');
+            let valid = true;
+            inputs.forEach(input => {
+                if (!input.checkValidity()) {
+                    valid = false;
+                }
+            });
+            if (valid) {
+                alert('All inputs are valid!');
+            } else {
+                alert('Please enter numbers between 1 and 60 in all text boxes.');
+            }
+        }
+    </script>
+</body>
+</html>

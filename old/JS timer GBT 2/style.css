@@ -1,0 +1,88 @@
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.add-timer {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-timer:hover {
+    background-color: #218838;
+}
+
+.timers-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.timer-controls button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.timer-controls button.start {
+    background-color: #007bff;
+    color: white;
+}
+
+.timer-controls button.pause {
+    background-color: #ffc107;
+    color: white;
+}
+
+.timer-controls button.reset {
+    background-color: #dc3545;
+    color: white;
+}
+
+.timer-controls button.remove {
+    background-color: #6c757d;
+    color: white;
+}

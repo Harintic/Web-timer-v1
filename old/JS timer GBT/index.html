@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Timer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .timer-container {
+            text-align: center;
+        }
+        .time {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .controls button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer-container">
+        <div class="time" id="time">00:00:00</div>
+        <div class="controls">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="stopTimer()">Stop</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+    <script src="app_v1.js"></script>
+</body>
+</html>

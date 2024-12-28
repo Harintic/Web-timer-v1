@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body onload="on_load_function()">
+
+
+    <div class="main-container">
+
+        <div class = Timer-box> 
+            <h1> WEB - Dev </h1>
+            <p id = "time">100:00:00</p>
+            <div class="Button-box">
+                <button class="Button-1" id = "start-button">Start</button>
+                <button class="Button-2" id = "pause-button" >Pause</button>
+                <!-- <button class="Button-3" onclick="sample_arrow()">Reset</button> -->
+                <button class="Close-button" id = "close-button" >settings</button>
+            </div>
+        </div>
+
+        <div id="overlay"></div>
+
+        <div id="settings_box">
+
+
+            
+            <!-- <br> -->
+            <label for="change-heading" class="settings-heading" > CHANGE HEADING </label>
+            <div class="change-heading">
+                
+                <input type="text" class="heading" id = "heading-input">
+                <button class="button">save</button>
+
+            </div>
+            <label for="change-timer" class="settings-heading" > SET TIMER </label>
+            <div class="change-timer">
+                
+                <input type="text" class="small-text-box" id = "hour-input" placeholder="HH">
+                <input type="text" class="small-text-box" id = "minute-input" placeholder="MM">
+                <input type="text" class="small-text-box" id = "seconds-input" placeholder="SS">
+                <button class="button" id ="save-button">save</button>
+
+            </div>
+
+
+            
+            <button class="Close-button" id = "close-button-confirmation" >X</button>
+
+            
+            <div class="confirmation">
+                
+                <p class="confirmation_p">are you sure ? </p>
+                <button  id ="confirm-ok">ok</button>
+                <button  id ="confirm-not_ok">cancel</button>
+
+                <!-- <button  id ="confirm-not_ok">cancel</button> -->
+                
+
+            </div>
+            
+
+        </div>
+
+
+        
+
+    </div>
+
+    
+
+
+    <script src="script.js"></script>
+</body>
+</html>

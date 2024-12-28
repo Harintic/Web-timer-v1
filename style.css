@@ -1,0 +1,120 @@
+
+.main-container{
+    display: block;
+    width: 50%;
+    margin: 50px auto;
+    text-align: center;
+    border: 1px solid #ccc; /* Optional: to visualize the container boundary */
+    padding: 20px; /* Optional: for better spacing inside the container */
+}
+
+.Timer-box{
+
+    display:inline-block;
+    position: relative;
+    /* border: 1px solid black; */
+    text-align: center;
+    /* align-content: center; */
+    /* width: auto;
+    height: auto; */
+}
+
+
+.Close-button{
+    /* z-index: -1; */
+    position: absolute;
+    top: 1px;
+    right: 1px;
+}
+
+#heading-input{
+    width: 185px;
+}
+
+#settings_box
+{
+    display: none;
+    position: fixed;
+    /* top: 25%; */
+    left: 50%;
+    width : 50vh;
+    height : 50vh;
+    z-index: 1000;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: #fff;
+    transform: translate(-50%, -50%);
+    border-radius: 5%;
+
+ 
+
+}
+
+.settings-heading{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    /* position: absolute; */
+    align-self: left;
+}
+
+.change-heading{
+    display:flex;
+    padding:20px;
+    padding-top: 5%;
+    gap:10px
+    /* border: 1px solid black; */
+}
+
+.change-timer{
+    /* border: 1px solid black; */
+    display:flex;
+    padding: 20px;
+    gap:10px
+    /* padding-top: 10%; */
+}
+
+.button{
+    width:50px
+}
+
+.small-text-box{
+    width:50px
+}
+
+.confirmation
+{
+    display: none;
+    border: 1px solid black;
+    width: 50%;
+    height: 50%;
+    transform: translate(50%, 0%);
+    z-index: 10;
+}
+
+
+
+
+
+.hour,.minutes,.seconds{
+    width : 10%;
+}
+
+#overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    /* border: 1px solid #e41414; */
+}
+
+#close-button-confirmation{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

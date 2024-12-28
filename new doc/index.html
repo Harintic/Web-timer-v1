@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Box Example</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #openDialogButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Dialog Box Styles */
+        #dialogBox {
+            display: block; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            z-index: 1000;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        /* Overlay Styles */
+        #overlay {
+            display: block; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            border: 1px solid #e41414;
+        }
+
+        
+    </style>
+
+    
+</head>
+<body>
+    <button id="openDialogButton">Open Dialog Box</button>
+
+    <div id="overlay"></div>
+    
+    <div id="dialogBox">
+        <button class="button">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
+    </div>
+
+    <!-- <script>
+        document.getElementById('openDialogButton').addEventListener('click', function() {
+            console.log("fuuu")
+            document.getElementById('dialogBox').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        });
+
+        document.getElementById('overlay').addEventListener('click', function() {
+            document.getElementById('dialogBox').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        });
+
+
+    </script> -->
+
+    <script src="script.js"></script>
+</body>
+</html>

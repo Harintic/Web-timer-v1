@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Get Text from Element</title>
+</head>
+<body>
+    <p id="myParagraph">Hello, this is a sample text!</p>
+
+    <script>
+        // Wait until the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Get the element by its ID
+            var element = document.getElementById('myParagraph');
+            
+            // Get the text content of the element
+            var text = element.innerText; // or use element.textContent
+            text = text + "wtf"
+            // Print the text content to the console
+            console.log(text);
+        });
+    </script>
+</body>
+</html>
