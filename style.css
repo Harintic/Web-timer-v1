@@ -1,4 +1,8 @@
 
+*{
+    box-sizing: border-box;
+}
+
 .main-container{
     display: block;
     width: 50%;
@@ -31,11 +35,13 @@
     width: 185px;
 }
 
+
+
 #settings_box
 {
     display: none;
     position: fixed;
-    /* top: 25%; */
+    top: 35%;
     left: 50%;
     width : 50vh;
     height : 50vh;
@@ -118,3 +124,141 @@
     top: 5px;
     right: 5px;
 }
+
+
+
+
+.tab-box {
+
+    /* width : 600px;
+    height : 800px; */
+    display: block;
+    width: 60%;
+    height:50vh;
+    margin: 50px auto;
+    /* border : 1px solid black; */
+    /* padding: 20px; */
+}
+
+
+.button-container{
+    width: 100%;
+    height: 10%;
+
+    /* border : 1px solid black; */
+}
+
+.button-container button{
+    text-align: left;
+    width:50%;
+    height : 100%;
+    float: left;
+    border: none; 
+    outline: none;
+    cursor:pointer;
+
+
+    padding: 10px;
+    font-size: 10px;
+    background-color: #ccc;
+
+}
+
+.button-container #button2{
+    text-align: right;
+
+}
+
+
+
+/* .button-container button:hover{
+    background-color: #f5f5dc;
+    border : 1px solid black;
+} */
+
+.content-container
+{
+    /* border : 1px solid black; */
+    height: 85%;
+    /* padding-top: 105px; */
+    box-sizing: border-box;
+    text-align: center;
+    display: none;
+    padding-top:5% ;
+    /* padding-right:10% ; */
+}
+
+.input-todo{
+    /* border : 1px solid black; */
+    /* width:50% */
+    padding-left: 20%;
+    padding-right: 20%;
+    
+}
+
+.list-container 
+{
+    text-align: left;
+    /* border : 1px solid black; */
+    height :90%;
+    padding-left: 20%;
+    padding-right: 20%;
+    overflow-y: auto; 
+    
+    
+}
+
+
+.list-container ul {
+    /* display:inline-block; */
+    
+    list-style-type: disc;
+    /* width: 100%; */
+    /* display: flex; */
+}
+
+ul {
+    list-style-type: disc;
+    
+}
+
+
+
+
+ul li span{
+    margin-left: auto;
+    
+}
+
+
+.list-container ul li.checked{
+
+    text-decoration: line-through;
+    text-decoration-color:hsla(0, 0%, 0%, 0.479);
+    /* text-decoration: hwb(0 8% 2% / 0.76); */
+    /* border : 1px solid black; */
+}
+
+
+.list-container ul li span{
+
+    text-decoration: none;
+    /* border : 1px solid black; */
+}
+
+
+
+.list-container li::before {
+    content: "--     "; /* Bullet symbol */
+    /* position: absolute;
+    left: 0; */
+     
+    color: black; /* Bullet color */
+  }
+
+
+  #event_log{
+    font-size: x-small;
+    padding-left: 0%;
+    list-style-type: none;
+  }

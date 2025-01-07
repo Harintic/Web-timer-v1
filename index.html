@@ -13,7 +13,7 @@
     <div class="main-container">
 
         <div class = Timer-box> 
-            <h1> WEB - Dev </h1>
+            <h1 id = main-heading> WEB - Dev </h1>
             <p id = "time">100:00:00</p>
             <div class="Button-box">
                 <button class="Button-1" id = "start-button">Start</button>
@@ -34,18 +34,23 @@
             <div class="change-heading">
                 
                 <input type="text" class="heading" id = "heading-input">
-                <button class="button">save</button>
+                <button class="button-save-confirmation" data-custom-func_name ="save_heading" >save</button>
 
             </div>
             <label for="change-timer" class="settings-heading" > SET TIMER </label>
+
             <div class="change-timer">
                 
                 <input type="text" class="small-text-box" id = "hour-input" placeholder="HH">
                 <input type="text" class="small-text-box" id = "minute-input" placeholder="MM">
                 <input type="text" class="small-text-box" id = "seconds-input" placeholder="SS">
-                <button class="button" id ="save-button">save</button>
+                <button class="button-save-confirmation" id ="save-button"  data-custom-func_name ="save_time" >save</button>
 
             </div>
+
+            <label for="audioCheckbox">
+                <input type="checkbox" id="audioCheckbox"> Play Sound
+            </label>
 
 
             
@@ -61,19 +66,61 @@
                 <!-- <button  id ="confirm-not_ok">cancel</button> -->
                 
 
-            </div>
-            
-
+            </div>   
         </div>
 
 
-        
+
 
     </div>
+
+    <!-- container box for to-do and  -->
+
+    <div class="tab-box">
+        <div class="button-container">
+
+            <button id="button1" onclick="showPanel(0,'#f5f5dc')">TO-DO</button>
+            <button id="button2" onclick="showPanel(1,'#eeeeee')">Mile-stones</Mile-stones></button>
+            
+        
+        </div>
+
+        <!-- <br> -->
+        <div class="content-container" id = "cc1">
+            <div class="input-todo">
+                <input type="text" class="add_new_to_do" placeholder="Add your Task" id = "to-do-text">
+            <!-- <input type="text" class="add_new_to_do" placeholder="Add your Task" > -->
+                <button class="to_do_button" id = "add_button"> ADD  </button>
+            </div>
+            
+
+            <div class="list-container" id = "list_container">
+                <ul id = "to-dolist">
+                    <!-- <li class="checked">wtf</li> -->
+                </ul>
+             
+            </div>
+            <!-- <textbox class="add_new_to_do">wtf</textbox> -->
+            
+            
+            
+
+        </div>
+        <div class="content-container" id = cc2> 
+            
+            <ul id = "event_log">
+                <!-- <li class="checked">wtf</li> -->
+            </ul>
+
+        </div>
+        
+</div>
 
     
 
 
     <script src="script.js"></script>
+
+
 </body>
 </html>
