@@ -262,3 +262,34 @@ ul li span{
     padding-left: 0%;
     list-style-type: none;
   }
+
+
+
+
+  .tab-box{
+    position: relative;
+
+  }
+
+
+
+  #clear_btn {
+
+      position: absolute;
+      bottom: 30px;
+      right: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+
+  }
+
+  .content-container{
+    overflow-y: auto; 
+  }

@@ -14,6 +14,8 @@
 
 
     let last_li;
+
+let logs ;
   
 ////////////////////////////////////////////////////////////
   function on_load_function()
@@ -22,9 +24,33 @@
 
       
       let data = localStorage.getItem("lc_data");
-      document.getElementById("list_container").innerHTML = data;
+    
+      if  (data != null)
+      {
+        document.getElementById("list_container").innerHTML = data;
+      }
+      
+
+      logs = localStorage.getItem("logs");
+
+      if  (logs != null)
+        {
+          document.getElementById("cc2").innerHTML = logs;
+        }
+
 
       saved_time_in_seconds =localStorage.getItem("time_left_in_seconds");
+
+      if (saved_time_in_seconds == null)
+        {
+          saved_time_in_seconds = 0;
+          localStorage.setItem("time_left_in_seconds",0)
+        }
+
+      console.log(saved_time_in_seconds)
+
+
+
       
 
       // store play audio
@@ -145,6 +171,7 @@ document.getElementById("pause-button").addEventListener('click',function(){
     clearInterval(timerId);
     localStorage.setItem("time_left_in_seconds",saved_time_in_seconds - time_passed);
     saved_time_in_seconds = saved_time_in_seconds - time_passed;
+    time_passed =0;
     is_timer_running = false;
 
     audio_toggle();
@@ -233,6 +260,9 @@ document.getElementById("confirm-ok").addEventListener('click',function(){
             
             updated_string_timer = `${hh}:${mm}:${ss}`
             document.getElementById('time').innerHTML = updated_string_timer;
+
+            localStorage.setItem("time_left_in_seconds",time_string_to_seconds(updated_string_timer))
+
         }
      if (current_button_function == "save_heading")
         {
@@ -339,7 +369,13 @@ document.getElementById("add_button").addEventListener('click',function (){
 
     if(x !="")
     {
+
+        
         let li = document.createElement("li");  // new li tag is created 
+        
+        // console.log(x)
+        // console.log(li)
+
         li.appendChild(document.createTextNode(x)); // text to li tag is added 
 
        
@@ -354,10 +390,14 @@ document.getElementById("add_button").addEventListener('click',function (){
         li.style.alignItems = "center";
   
         li.appendChild(closeButton);
+        // console.log("wtf")
+
+        // console.log(ul)
         ul.appendChild(li);
 
 
-        saveTodolist();
+        // saveTodolist();
+        saveContainer("list_container","lc_data");
     }
     
 
@@ -376,13 +416,17 @@ list_container.addEventListener("click" , function(e){
     {
 		    // toggle the li tag 
         e.target.classList.toggle("checked");
-        saveTodolist();
+        // saveTodolist();
+        saveContainer("list_container","lc_data");
     }
     else if (e.target.tagName === "SPAN")
     {
         // e.target.classList.remove("")
         e.target.parentElement.remove();
-        saveTodolist();
+        // saveTodolist();
+
+
+        saveContainer("list_container","lc_data");
     }
  
 },false);
@@ -390,11 +434,25 @@ list_container.addEventListener("click" , function(e){
 
 // function to save the entire container 
 
-function saveTodolist(){
-  data =  document.getElementById("list_container").innerHTML;
-  localStorage.setItem("lc_data" , data)
+// function saveTodolist(){
 
-}
+//   data =  document.getElementById("list_container").innerHTML;
+//   localStorage.setItem("lc_data" , data)
+
+// }
+
+
+
+// function to save the entire container 
+
+function saveContainer(list_name ,local_filename ){
+    data =  document.getElementById(list_name).innerHTML;
+    localStorage.setItem(local_filename , data)
+  
+  }
+
+
+
 
 const now = new Date();
 const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
@@ -430,7 +488,8 @@ if (last_li =="p")
 
     console.log(s_time);
     append_li("event_log",s_time);
-    
+
+    saveContainer("cc2","logs")
     
     }
         
@@ -454,6 +513,12 @@ function logTimepause(){
 
             append_li("event_log",p_time );
             append_li("event_log",seconds_to_time_string(difference));
+
+            logs = console.log(document.getElementById("cc2"))
+
+            // save log container 
+           saveContainer("cc2","logs")
+
             
 
         
@@ -464,3 +529,15 @@ function logTimepause(){
   
 
 }
+
+
+
+function removeFirstThree() {
+    console.log("removed")
+    const list = document.getElementById("event_log");
+    for (let i = 0; i < 3; i++) {
+      if (list.firstElementChild) {
+        list.firstElementChild.remove(); // Remove the first child if it exists
+      }
+    }
+  }
